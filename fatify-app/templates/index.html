@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fatify Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        img { max-width: 300px; margin: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>預覽變胖後的樣子</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">上傳圖片</button>
+    </form>
+
+    {% if original %}
+        <h2>原圖</h2>
+        <img src="{{ original }}" alt="Original">
+        <h2>模擬結果</h2>
+        <img src="{{ result }}" alt="Fatified">
+    {% endif %}
+</body>
+</html>
